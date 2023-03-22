@@ -1,12 +1,47 @@
 import { useState } from "react";
 import "./Component.css";
 function Homepage() {
-  const [isClick, setIsClick] = useState(false);
+  const [isClick, setIsClick] = useState({
+    one: false,
+    two: false,
+    three: false,
+    four: false,
+    five: false,
+    six: false,
+  });
 
-  function click() {
-    setIsClick(!isClick);
+  const [closeData, setCloseData] = useState({
+      one: false,
+      two: false,
+      three: false,
+      four: false,
+      five: false,
+      six: false,
+    });
+  function Close(count) {
+      for (var i in isClick) {
+        if (i === count) {
+          setIsClick({ ...isClick, [i]: false });
+          setCloseData({...closeData,[i]: false});
+        }
+      }
+    }
+
+  function click(count) {
+    var updatedIsClick = {};
+    var updatedCloseData ={};
+    for (var i in isClick) {
+      if (i === count) {
+        updatedIsClick[i] = true;
+        updatedCloseData[i] =true;
+      } else {
+        updatedIsClick[i] = false;
+        updatedCloseData[i]= false;
+      }
+    }
+    setIsClick(updatedIsClick);
+    setCloseData(updatedCloseData);
   }
-  console.log(isClick);
 
   return (
     <div>
@@ -166,15 +201,24 @@ function Homepage() {
               <div className="home-que">
                 <p>What is Netflix?</p>
                 <div>
-                  <i
-                    className="fa-solid fa-plus"
-                    onClick={() => {
-                      click();
-                    }}
-                  ></i>
+                  {closeData.one ? (
+                    <i
+                      className="fa-solid fa-xmark"
+                      onClick={() => {
+                        Close("one");
+                      }}
+                    ></i>
+                  ) : (
+                    <i
+                      className="fa-solid fa-plus"
+                      onClick={() => {
+                        click("one");
+                      }}
+                    ></i>
+                  )}
                 </div>
               </div>
-              {isClick && (
+              {isClick.one && (
                 <div className="home-ans">
                   <p>
                     Netflix is a streaming service that offers a wide variety of
@@ -195,15 +239,24 @@ function Homepage() {
               <div className="home-que">
                 <p>How much does Netflix cost?</p>
                 <div>
-                  <i
-                    className="fa-solid fa-plus"
-                    onClick={() => {
-                      click();
-                    }}
-                  ></i>
+                  {closeData.two ? (
+                    <i
+                      className="fa-solid fa-xmark"
+                      onClick={() => {
+                        Close("two");
+                      }}
+                    ></i>
+                  ) : (
+                    <i
+                      className="fa-solid fa-plus"
+                      onClick={() => {
+                        click("two");
+                      }}
+                    ></i>
+                  )}
                 </div>
               </div>
-              {isClick && (
+              {isClick.two && (
                 <div className="home-ans">
                   <p>
                     Watch Netflix on your smartphone, tablet, Smart TV, laptop,
@@ -219,15 +272,24 @@ function Homepage() {
               <div className="home-que">
                 <p>Where can I watch?</p>
                 <div>
-                  <i
-                    className="fa-solid fa-plus"
-                    onClick={() => {
-                      click();
-                    }}
-                  ></i>
+                  {closeData.three ? (
+                    <i
+                      className="fa-solid fa-xmark"
+                      onClick={() => {
+                        Close("three");
+                      }}
+                    ></i>
+                  ) : (
+                    <i
+                      className="fa-solid fa-plus"
+                      onClick={() => {
+                        click("three");
+                      }}
+                    ></i>
+                  )}
                 </div>
               </div>
-              {isClick && (
+              {isClick.three && (
                 <div className="home-ans">
                   <p>
                     Watch anywhere, anytime. Sign in with your Netflix account
@@ -250,15 +312,24 @@ function Homepage() {
               <div className="home-que">
                 <p>How do I cancel?</p>
                 <div>
-                  <i
-                    className="fa-solid fa-plus"
-                    onClick={() => {
-                      click();
-                    }}
-                  ></i>
+                  {closeData.four ? (
+                    <i
+                      className="fa-solid fa-xmark"
+                      onClick={() => {
+                        Close("four");
+                      }}
+                    ></i>
+                  ) : (
+                    <i
+                      className="fa-solid fa-plus"
+                      onClick={() => {
+                        click("four");
+                      }}
+                    ></i>
+                  )}
                 </div>
               </div>
-              {isClick && (
+              {isClick.four && (
                 <div className="home-ans">
                   <p>
                     Netflix is flexible. There are no annoying contracts and no
@@ -274,15 +345,24 @@ function Homepage() {
               <div className="home-que">
                 <p>What can I watch on Netflix?</p>
                 <div>
-                  <i
-                    className="fa-solid fa-plus"
-                    onClick={() => {
-                      click();
-                    }}
-                  ></i>
+                  {closeData.five ? (
+                    <i
+                      className="fa-solid fa-xmark"
+                      onClick={() => {
+                        Close("five");
+                      }}
+                    ></i>
+                  ) : (
+                    <i
+                      className="fa-solid fa-plus"
+                      onClick={() => {
+                        click("five");
+                      }}
+                    ></i>
+                  )}
                 </div>
               </div>
-              {isClick && (
+              {isClick.five && (
                 <div className="home-ans">
                   <p>
                     Netflix has an extensive library of feature films,
@@ -298,15 +378,24 @@ function Homepage() {
               <div className="home-que">
                 <p>Is Netflix good for kids?</p>
                 <div>
-                  <i
-                    className="fa-solid fa-plus"
-                    onClick={() => {
-                      click();
-                    }}
-                  ></i>
+                  {closeData.six ? (
+                    <i
+                      className="fa-solid fa-xmark"
+                      onClick={() => {
+                        Close("six");
+                      }}
+                    ></i>
+                  ) : (
+                    <i
+                      className="fa-solid fa-plus"
+                      onClick={() => {
+                        click("six");
+                      }}
+                    ></i>
+                  )}
                 </div>
               </div>
-              {isClick && (
+              {isClick.six && (
                 <div className="home-ans">
                   <p>
                     The Netflix Kids experience is included in your membership
@@ -321,7 +410,6 @@ function Homepage() {
                 </div>
               )}
             </div>
-            
           </div>
         </div>
       </div>
