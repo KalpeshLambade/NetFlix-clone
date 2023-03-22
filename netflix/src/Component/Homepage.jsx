@@ -1,5 +1,7 @@
 import { useState } from "react";
 import "./Component.css";
+import Footer from "./Footer";
+
 function Homepage() {
   const [isClick, setIsClick] = useState({
     one: false,
@@ -11,32 +13,32 @@ function Homepage() {
   });
 
   const [closeData, setCloseData] = useState({
-      one: false,
-      two: false,
-      three: false,
-      four: false,
-      five: false,
-      six: false,
-    });
+    one: false,
+    two: false,
+    three: false,
+    four: false,
+    five: false,
+    six: false,
+  });
   function Close(count) {
-      for (var i in isClick) {
-        if (i === count) {
-          setIsClick({ ...isClick, [i]: false });
-          setCloseData({...closeData,[i]: false});
-        }
+    for (var i in isClick) {
+      if (i === count) {
+        setIsClick({ ...isClick, [i]: false });
+        setCloseData({ ...closeData, [i]: false });
       }
     }
+  }
 
   function click(count) {
     var updatedIsClick = {};
-    var updatedCloseData ={};
+    var updatedCloseData = {};
     for (var i in isClick) {
       if (i === count) {
         updatedIsClick[i] = true;
-        updatedCloseData[i] =true;
+        updatedCloseData[i] = true;
       } else {
         updatedIsClick[i] = false;
-        updatedCloseData[i]= false;
+        updatedCloseData[i] = false;
       }
     }
     setIsClick(updatedIsClick);
@@ -412,6 +414,21 @@ function Homepage() {
             </div>
           </div>
         </div>
+        <div className="home-membership">
+          <div>
+            <p>
+              Ready to watch? Enter your email to create or restart your
+              membership.
+            </p>
+          </div>
+          <div>
+                <input type="text" placeholder="Email address" className="home-input"/>
+                <button className="home-button">Get Started <i className="fa-solid fa-angle-right"></i></button>
+          </div>
+        </div>
+      </div>
+      <div>
+          <Footer/>
       </div>
     </div>
   );
