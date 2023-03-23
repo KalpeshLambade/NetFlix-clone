@@ -462,3 +462,32 @@
     text-align:left;
     font-size:1.1vw;
 }
+
+/* Sign in */
+/* #signin{
+    height:150vh;
+} */
+.signin-back{
+    height:150vh;
+    width:100%;
+    background-image: url("https://assets.nflxext.com/ffe/siteui/vlv3/8f12b4f0-a894-4d5b-9c36-5ba391c63fbe/44355e66-dbf8-4dd8-ba6b-8e9e32ec6abd/IN-en-20230320-popsignuptwoweeks-perspective_alpha_website_large.jpg");
+    background-size: cover;
+    filter: brightness(0.5);
+    position: absolute;
+    z-index: +1;
+    top: 0;
+    left:0;
+}
+.signin-logo{
+    position: relative;
+    z-index: +2;
+    top:2.5vw;
+    left:3vw;
+    /* border: 1px solid white; */
+    height:4vw;
+    width:15%;  
+}
+.signin-logo >img{
+    height:100%;
+    width:100%;
+}
