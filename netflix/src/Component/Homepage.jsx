@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./Component.css";
 import Footer from "./Footer";
+import {useNavigate} from "react-router-dom"
 
 function Homepage() {
   const [isClick, setIsClick] = useState({
@@ -20,6 +21,9 @@ function Homepage() {
     five: false,
     six: false,
   });
+
+  const route = useNavigate();
+
   function Close(count) {
     for (var i in isClick) {
       if (i === count) {
@@ -62,7 +66,7 @@ function Homepage() {
               <p>English</p>
               <i className="fa-solid fa-caret-down"></i>
             </div>
-            <button>Sign In</button>
+            <button onClick={() => {route('/signin')}}>Sign In</button>
           </div>
         </div>
         <div className="home-top-mid">
@@ -77,7 +81,7 @@ function Homepage() {
             </p>
             <div>
               <input type="email" placeholder="Email Address" />
-              <button>
+              <button onClick={() => {route('/signupfirst')}}>
                 Get Started <i className="fa-solid fa-angle-right"></i>
               </button>
             </div>
@@ -423,7 +427,7 @@ function Homepage() {
           </div>
           <div>
                 <input type="text" placeholder="Email address" className="home-input"/>
-                <button className="home-button">Get Started <i className="fa-solid fa-angle-right"></i></button>
+                <button className="home-button" onClick={() => {route("/signupfirst")}}>Get Started <i className="fa-solid fa-angle-right"></i></button>
           </div>
         </div>
       </div>

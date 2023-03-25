@@ -69,6 +69,7 @@
     outline:none;
     font-weight: bold;
     font-size: 1vw;
+    cursor: pointer;
 }
 .home-top-mid{
     /* border:1px solid white; */
@@ -124,6 +125,7 @@
     border-radius: 5px;
     border: none;
     outline: none;
+    cursor: pointer;
 }
 ::placeholder {
     color: rgb(168, 167, 167);
@@ -393,6 +395,7 @@
 }
 .home-membership >div:nth-child(2) >button{
     width:30%;
+    cursor: pointer;
 }
 .home-membership >div:nth-child(2) >button >i{
     font-size: 1.5vw;
@@ -464,9 +467,9 @@
 }
 
 /* Sign in */
-/* #signin{
+#signin{
     height:150vh;
-} */
+}
 .signin-back{
     height:150vh;
     width:100%;
@@ -481,13 +484,343 @@
 .signin-logo{
     position: relative;
     z-index: +2;
-    top:2.5vw;
+    top:1.5vw;
     left:3vw;
     /* border: 1px solid white; */
     height:4vw;
-    width:15%;  
+    width:12%;  
 }
 .signin-logo >img{
     height:100%;
     width:100%;
+}
+.signin-page{
+    position: relative;
+    z-index: +2;
+    border: 1px solid transparent;
+    height:60%;
+    width:30%;
+    margin: 3% auto;
+    background-color: rgba(0,0,0,.75);
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.signin-page >div{
+    /* border: 1px solid white; */
+    height:75%;
+    width:70%;
+    margin: 10% auto;
+    color:white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.signin-page-top {
+    height: 75%;
+    width:100%;
+    /* border: 1px solid red; */
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.signin-page-top >h2{
+    /* border: 1px solid blue; */
+    height:15%;
+    font-size: 1.8vw;
+    align-self: flex-start;
+    padding: 2% 0 ;
+    margin-bottom: 0;
+}
+.signin-page-top >div:nth-child(2){
+    /* border: 1px solid blue; */
+    margin-bottom: 8%;
+    height:35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.signin-page-top >div:nth-child(2) >input{
+    height:40%;
+    background-color: #333333;
+    color: #434040;
+    border:none;
+    outline: none;
+    padding: 0 5%;
+    font-size: 1vw;
+    border-radius: 4px;
+}
+.signin-page-top >div:nth-child(3){
+    /* border: 1px solid blue;  */
+    height: 30%;
+    width:100%;
+}
+.signin-page-top >div:nth-child(3) >button{
+    width:100%;
+    height:45%;
+    background-color: #e50914;
+    color:#fff;
+    font-size: 1.3vw;
+    border:none;
+    outline: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.signin-page-top >div:nth-child(3) >div{
+    /* border: 1px solid white; */
+    display: flex;
+    justify-content: space-between;
+    color:grey; 
+}
+.signin-page-top >div:nth-child(3) >div input{
+    color: grey;
+}
+.signin-page-bot{
+    /* border: 1px solid blue; */
+    height:25%;
+    width:100%;
+    text-align:left;
+}
+.signin-page-bot>div >p{
+    color:grey;
+    font-size: 0.9vw;
+}
+.signin-page-bot>div >p >strong{
+    cursor: pointer;
+} 
+.white{
+    color:white;
+    font-weight: 400;
+}
+.blue{
+    color:#006ad7;
+}
+.signin-footer{
+    width: 100%;
+    /* border:1px solid red; */
+    position:absolute;
+    z-index: +2;
+    top:115vh;
+    height:35%;
+    background-color: rgba(0,0,0,.75);
+    color:#666262;
+    text-align: left;
+}
+.signin-footer p{
+    font-size: 1vw;
+}
+.signin-footer >div:nth-child(1){
+    /* border:1px solid red; */
+    width:70%;
+    margin:auto;  
+    margin-top: 2.5%; 
+}
+.signin-footer >div:nth-child(2){
+    margin: auto;
+    width:70%;
+    /* border:1px solid red;  */
+}
+.signin-footer >div:nth-child(2)>div{
+    display:flex;
+    justify-content:space-between;
+    /* border:1px solid blue; */
+    width:75%; 
+}
+.signin-footer >div:nth-child(3){
+    /* border:1px solid red; */
+    margin: 1% auto;
+    width:70%;
+}
+.signin-footer-third{
+    /* border:1px solid blue;  */
+}
+.signin-footer-third >div{
+    border:1px solid grey; 
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width:10%;
+    border-radius: 4px;
+}
+/* signup Header  */
+#signUpHeader{
+    height: 12vh;
+    border: 0.5px solid rgb(222, 217, 217);
+}
+#signUpHeader>div{
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px solid red; */
+    width:95%;
+    margin:auto;
+    height:100%;
+    align-items:center;
+}
+#signUpHeader>div >div:nth-child(1){
+    width:13%;
+    height:55%;
+}
+#signUpHeader>div >div:nth-child(1) >img{
+    width:100%;
+    height:100%;
+}
+#signUpHeader>div >div:nth-child(2){
+    font-size: 1.3vw;
+    font-weight:600;
+    margin-right: 2%;
+    /* border: 1px solid blue; */
+    cursor: pointer;
+}
+/* signup Footer  */
+#signUpFooter{
+    height: 30vh;
+    width:100%;
+    margin:0;
+    padding:0;
+    border: 1px solid transparent;
+    background-color: #f3f3f3;
+}
+#signUpFooter>div{
+     /* border: 1px solid red; */
+     width:90%;
+     height:90%;
+     margin:0.5% auto;
+     color:#000;
+     display: flex;
+     flex-direction:column;
+     justify-content:space-evenly;
+     text-align:left;
+}
+#signUpFooter>div p{
+    font-size:1vw;
+    color:grey;
+}
+.signUpFooter-t{
+    /* border: 1px solid black; */
+    height:25%;
+}
+.signUpFooter-m {
+    height:50%;
+    width:50%;
+}
+.signUpFooter-m >div{
+    display:flex;
+    justify-content:space-between;
+}
+.signUpFooter-b {
+    height:25%;
+    /* border: 1px solid blue; */
+}
+.signUpFooter-b>div{
+    display:flex;
+    justify-content:space-around;
+    align-items: center;
+    width:8%;
+    height:90%;
+    border:1px solid grey;
+    border-radius:5px;
+}
+.signUpFooter-b>div >i{
+    font-size:1vw;
+    color:grey;
+}
+/* SignUpFirst */
+.signup-first-content{
+    height:85vh;
+}
+.signup-first-content >div{
+     /* border: 1px solid blue; */
+    width:40%;
+    height:75%;
+    margin: 8% auto; 
+}
+.signup-first-content-logo{
+    /* border: 1px solid blue; */
+    height:15%;
+    width:45%;
+    margin: auto;
+}
+.signup-first-content-logo >img{
+    height: 100%;
+    width:100%;
+}
+.signup-first-content >div >p:nth-child(2){
+    /* border: 1px solid blue; */
+    font-size: 1vw;
+    margin-top: 8%;
+    margin-bottom: 0;
+    color: #333;
+}
+.signup-first-content>div >h1{
+    /* border: 1px solid blue; */
+    margin-top: 1%;
+    font-size: 2vw;
+    width:60%;
+    margin: 4% auto;
+    margin-top: 0;
+    color: #333;
+}
+.signup-first-content >div >p:nth-child(4){
+    /* border: 1px solid blue; */
+    font-size: 1.2vw;
+    width:50%;
+    margin: 5% auto;
+    color: #333;
+}
+.signup-first-content >div >button{
+    height: 13%;
+    width:53%;
+    font-size: 1.4vw;
+    background-color: #e50914;
+    color:white;
+    border: none;
+    outline:none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.signup-second-content >div{
+    text-align:left;
+    /* border:1px solid red; */
+    width:30%;
+    margin-top: 2%;
+}
+.signup-second-content >div >h1{
+/* border:1px solid blue; */
+margin: 0;
+width:80%;
+}
+.signup-second-content >div >p:nth-child(3){
+/* border:1px solid blue; */
+font-size: 1.2vw;
+width:75%;
+line-height: 30px;
+
+}
+.signup-second-content >div >div:nth-child(4){
+    /* border:1px solid blue; */
+    height:50%;
+}
+.signup-second-content >div >div:nth-child(4) >form{
+    height:100%;
+    width:100%;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+}
+.signup-second-content >div >div:nth-child(4) input{
+    width:100%;
+    height:20%;
+    padding:0 2%;
+    font-size: 1.1vw;
+    outline:none;
+}
+.signup-second-content >div >div:nth-child(4) input:last-child{
+    background-color: #e50914;
+    color:white;
+    border:none;
+    border-radius:4px;
+    font-size:1.5vw;
+    height:23%;
+    margin-top: 5%;
+    cursor:pointer;
 }
