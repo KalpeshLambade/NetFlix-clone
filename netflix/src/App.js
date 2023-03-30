@@ -5,6 +5,7 @@ import Footer from "./Component/Footer";
 import SignIn from "./Component/SignIn";
 import SignUpFirst from "./Component/SignUp/SignUpFirst";
 import SignUpSecond from "./Component/SignUp/SignUpSecond";
+import Genere from "./Component/Genere";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route exact path="/signin" element={<SignIn/>}/>
         <Route exact path="/signupfirst" element={<SignUpFirst/>}/>
         <Route exact path="/signupsecond" element={<SignUpSecond/>} />
+        <Route exact path='/genere' element={<Genere/>} />
       </Routes>
     </div>
   );
