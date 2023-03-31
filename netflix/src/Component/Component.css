@@ -131,6 +131,7 @@
     color: rgb(168, 167, 167);
     opacity: 1; /* Firefox */
   }
+
 .home-tv{
      border:10px solid #232323;
      border-left:none;
@@ -547,7 +548,7 @@
 .signin-page-top >div:nth-child(2) >input{
     height:40%;
     background-color: #333333;
-    color: #434040;
+    color: white;
     border:none;
     outline: none;
     padding: 0 5%;

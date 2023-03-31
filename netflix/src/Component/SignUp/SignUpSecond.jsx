@@ -3,6 +3,7 @@ import SignupHeader from "./SignupHeader";
 import SignupFooter from "./signupFooter";
 import { useState } from "react";
 import { json, useNavigate } from "react-router-dom";
+import { toast } from "react-hot-toast";
 
 function SignUpSecond() {
   const [userData, setUserData] = useState({
@@ -24,17 +25,17 @@ function SignUpSecond() {
     }
 
     if (flag) {
-      alert("Email Already Existed");
+      toast.error("Email Already Existed");
       setUserData({ ...userData, email: "" });
     } else if (userData.password.length < 8) {
-      alert("Password must be of 8 characters");
+      toast.error("Password must be of 8 characters");
       setUserData({ ...userData, password: "" });
     } else {
       dataFromLs.push(userData);
       localStorage.setItem("userDataNet", JSON.stringify(dataFromLs));
       setUserData({ name: "", email: "", password: "" });
       router("/signin");
-      alert("signUp Sucessful");
+      toast.success("signUp Sucessful");
     }
   }
 
