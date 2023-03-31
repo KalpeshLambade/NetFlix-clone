@@ -829,11 +829,91 @@ line-height: 30px;
     height: 100%;
     width:100%;
 }
+/* Page not found */
+.pagenotfound{
+    width:100%;
+}
+.pagenotfound-nav{
+    height:10vh;
+    background-color: #000;
+    display:flex;
+    align-items:center;
+    position: absolute;
+    z-index: +1;
+    width:100%;
+}
+.pagenotfound-nav >div{
+    width:7%;
+    height:50%;
+    margin:0 2%;
+    /* border:1px solid blue; */
+}
+.not-content{
+    position: absolute;
+    top:10vh;
+    z-index: -1;
+    height:90vh;
+    width:100%;
+    border:1px solid transparent;
+    background-image: url("https://assets.nflxext.com/ffe/siteui/pages/errors/bg-lost-in-space.png");
+    background-size:100% 100%;
+    filter: brightness(0.7);
+}
+.not-display-content{
+    position: absolute;
+    top:10vh;
+    z-index: +1;
+    height:90vh;
+    width:100%;
+}
+.not-display-content >div{
+    /* border:1px solid red;  */
+    width:45%;
+    height: 65%;
+    margin:10% auto;
+    color:white;
+}
+.not-display-content >div >h1{
+    font-size: 4vw;
+}
+.not-display-content >div >p{
+    font-size:1.5vw;
+}
+.not-display-content >div >button{
+    height:10%;
+    width:23%;
+    border-radius: 4px;
+    border:none;
+    outline:none;
+    color:#000;
+    background-color: white;
+    font-weight: bolder;
+    font-size: 1.2vw;
+}
+.not-display-content >div >div{
+    border-left:2px solid red; 
+    width:50%;
+    margin:3% auto;
+    height:12%;
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+.not-display-content >div >div >p{
+    font-size:1.8vw;
+    margin-left: 5%;
+}
+/* Cursor */
+.cursor{
+    cursor:pointer;
+}
 /* genere */
 #genere{
-    background-color: #2d2d2d;
+    background-color: #181818;
+    color:white;
 }
 .genere-nav{
+    position: fixed;
     width:100%;
     height:3.5vw;
     /* border:1px solid red; */
@@ -841,7 +921,6 @@ line-height: 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color:white;
 }
 .genere-nav-left{
     margin: 0 2%;
@@ -879,15 +958,91 @@ line-height: 30px;
     border:1px solid rgb(179, 174, 189);
 }
 .show-title{
-    height: 16vw;
+    height: 20vw;
     width:100%;
     border: 1px solid transparent;
 }
 .show-title >div{
-    border: 1px solid white;
-    width:50%;
-    height:60%;
-    margin:3%;
+    /* border: 1px solid white; */
+    width:40%;
+    height:70%;
+    margin: 8% 3%;
     color:white;
     text-align: left;
 }
+.show-title >div >h1{
+    font-size:3.5vw;
+    font-weight: bolder;
+    margin: 0;
+}
+.show-title >div >p{
+    font-size:1.3vw;
+}
+.shows{
+    height:18vw;
+    /* border: 1px solid blue; */
+}
+.shows>div:nth-child(1){
+    /* border: 1px solid white; */
+    display: flex;
+    align-items: center;
+    width:20%;
+    height:3vw;
+    margin: 0 2.5%;
+}
+.show-maintitle{
+    font-size: 1.4vw;
+    margin: 0 1.5%;
+    height:80%;
+    display: flex;
+    align-items: center;
+}
+.show-subtital{
+    font-size: 1.1vw;
+    display: none;
+    align-items: center;
+}
+.show-maintitle:hover +.show-subtital{
+    display: flex;
+    justify-content: space-evenly;
+    width:40%;
+}
+
+#container{
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    width:95vw;
+    /* border:1px solid white; */
+    margin:auto;
+}
+#flex-scroll{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  /* border:1px solid red; */
+}
+#container::-webkit-scrollbar {
+    /* display: none; */
+    /* overflow: hidden; Hide scrollbars */
+    height:3vh;
+    cursor:pointer;
+  }
+.box {
+    width: 20vw;
+    height: 13vw;
+    /* border:1px solid blue; */
+    display:flex;
+    flex-direction:column;
+    justify-content:space-evenly;
+    align-items:center;
+  }
+  .box >div{
+    height:80%;
+    width:90%;
+  }
+  .box >p{
+    height:10%;
+    font-size:1.2vw;
+  }

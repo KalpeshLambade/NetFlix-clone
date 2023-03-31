@@ -6,11 +6,13 @@ import SignIn from "./Component/SignIn";
 import SignUpFirst from "./Component/SignUp/SignUpFirst";
 import SignUpSecond from "./Component/SignUp/SignUpSecond";
 import Genere from "./Component/Genere";
+import PageNotFound from "./Component/PageNotFound";
 
 function App() {
   return (
     <div className="App">
       <Routes>
+        <Route path="*" element={<PageNotFound/>} />
         <Route exact path="/" element={<Homepage />} />
         <Route exact path="/footer" element={<Footer />} />
         <Route exact path="/signin" element={<SignIn/>}/>
