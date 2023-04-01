@@ -4,7 +4,12 @@ import { useNavigate } from "react-router-dom";
 const Logout = () => {
   const route = useNavigate();
 
-  setTimeout(() =>{route('/')}, 30000);
+  setTimeout(() =>{logout()}, 30000);
+
+  const logout =() => {
+      localStorage.removeItem("currentDataNet");
+      route('/');
+  }
 
   return (
     <div id="logout">
@@ -25,7 +30,7 @@ const Logout = () => {
             only necessary if you’re on a shared or public computer.
           </p>
           <p>You’ll be redirected to Netflix.com in 30 seconds.</p>
-          <button>Go Now</button>
+          <button onClick={() => {logout()}}>Go Now</button>
         </div>
 
         <div className="genere-footer logout-footer">

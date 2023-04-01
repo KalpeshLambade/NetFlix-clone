@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./Component.css";
 import Footer from "./Footer";
-import {useNavigate} from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 
 function Homepage() {
   const [isClick, setIsClick] = useState({
@@ -22,7 +22,18 @@ function Homepage() {
     six: false,
   });
 
+  const [currentData, setCurrentData] = useState(false);
+
   const route = useNavigate();
+
+  useEffect(() => {
+    var currentUserData = JSON.parse(localStorage.getItem("currentDataNet"));
+    if (currentUserData) {
+      setCurrentData(true);
+    }
+  }, []);
+
+  // console.log(currentData);
 
   function Close(count) {
     for (var i in isClick) {
@@ -66,7 +77,23 @@ function Homepage() {
               <p>English</p>
               <i className="fa-solid fa-caret-down"></i>
             </div>
-            <button onClick={() => {route('/signin')}}>Sign In</button>
+            {currentData ? (
+              <button
+                onClick={() => {
+                  route("/logout");
+                }}
+              >
+                Sign Out
+              </button>
+            ) : (
+              <button
+                onClick={() => {
+                  route("/signin");
+                }}
+              >
+                Sign In
+              </button>
+            )}
           </div>
         </div>
         <div className="home-top-mid">
@@ -81,9 +108,23 @@ function Homepage() {
             </p>
             <div>
               <input type="email" placeholder="Email Address" />
-              <button onClick={() => {route('/signupfirst')}}>
-                Get Started <i className="fa-solid fa-angle-right"></i>
-              </button>
+              {currentData ? (
+                <button
+                  onClick={() => {
+                    route("/genere");
+                  }}
+                >
+                  Get Started <i className="fa-solid fa-angle-right"></i>
+                </button>
+              ) : (
+                <button
+                  onClick={() => {
+                    route("/signupfirst");
+                  }}
+                >
+                  Get Started <i className="fa-solid fa-angle-right"></i>
+                </button>
+              )}
             </div>
           </div>
         </div>
@@ -426,13 +467,35 @@ function Homepage() {
             </p>
           </div>
           <div>
-                <input type="text" placeholder="Email address" className="home-input"/>
-                <button className="home-button" onClick={() => {route("/signupfirst")}}>Get Started <i className="fa-solid fa-angle-right"></i></button>
+            <input
+              type="text"
+              placeholder="Email address"
+              className="home-input"
+            />
+            {currentData ? (
+              <button
+                className="home-button"
+                onClick={() => {
+                  route("/genere");
+                }}
+              >
+                Get Started <i className="fa-solid fa-angle-right"></i>
+              </button>
+            ) : (
+              <button
+                className="home-button"
+                onClick={() => {
+                  route("/signupfirst");
+                }}
+              >
+                Get Started <i className="fa-solid fa-angle-right"></i>
+              </button>
+            )}
           </div>
         </div>
       </div>
       <div>
-          <Footer/>
+        <Footer />
       </div>
     </div>
   );
