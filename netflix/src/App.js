@@ -8,6 +8,7 @@ import SignUpSecond from "./Component/SignUp/SignUpSecond";
 import Genere from "./Component/Genere";
 import PageNotFound from "./Component/PageNotFound";
 import Logout from "./Component/Logout";
+import Title from "./Component/Title";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route exact path="/signupsecond" element={<SignUpSecond/>} />
         <Route exact path='/genere' element={<Genere/>} />
         <Route exact path="/logout" element={<Logout/>} />
+        <Route exact path="/title/:id" element={<Title/>} />
       </Routes>
     </div>
   );
